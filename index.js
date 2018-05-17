@@ -8,12 +8,12 @@ function nowServing(katzDeliLine) {
   if (katzDeliLine.length < 1) {
       return "There is nobody waiting to be served!";
   }
-  for (var i in katzDeliLine) {
-    if (i >= 0) {
+  // for (var i in katzDeliLine) { 
+  // if (i >= 0) {
       var orderup = katzDeliLine.shift();
       return "Currently serving " + orderup + ".";
-    }
-  }
+  //  }
+  // }
 }
 
 function currentLine(katzDeliLine) {
@@ -26,3 +26,10 @@ function currentLine(katzDeliLine) {
   }
   return `The line is currently: ${newline.join(", ")}`;
 }
+
+function takeANumber(katzDeliLine, customer) {
+  katzDeliLine.push(customer);
+  hungryforsandwich++;
+  return hungryforsandwich;
+}
+var hungryforsandwich = 1;
